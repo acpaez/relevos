@@ -36,8 +36,12 @@ public class Principal {
         } catch (InterruptedException ex) {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
-       /* persona3.start();
+        persona3.start();
         persona4.start();
-        persona5.start();*/
+        persona5.start();
+        
+        persona6.start();
+        persona7.start();
+        persona8.start();
     }
 }
