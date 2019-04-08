@@ -7,33 +7,37 @@ import java.util.logging.Logger;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author c-les
  */
 public class Principal {
-    public void principal(){
-        Persona persona=new Persona();
-        
-        Hilo p11=new Hilo(persona);
-        Hilo p12=new Hilo(persona);
-        p11.start();
-        p12.start();
+
+    Equipo equipo = new Equipo(1);
+    Equipo equipo2 = new Equipo(2);
+    Equipo equipo3 = new Equipo(3);
+
+    Persona persona = new Persona(equipo, "Atleta 1", 0, 33);
+    Persona persona1 = new Persona(equipo, "Atleta 2", 33, 66);
+    Persona persona2 = new Persona(equipo, "Atleta 3", 66, 100);
+    Persona persona3 = new Persona(equipo2, "Atleta 4", 0, 33);
+    Persona persona4 = new Persona(equipo2, "Atleta 5", 33, 66);
+    Persona persona5 = new Persona(equipo2, "Atleta 6", 66, 100);
+    Persona persona6 = new Persona(equipo3, "Atleta 7", 0, 33);
+    Persona persona7 = new Persona(equipo3, "Atleta 8", 33, 66);
+    Persona persona8 = new Persona(equipo3, "Atleta 9", 66, 100);
+
+    public void principal() {
+        persona.start();
+        persona1.start();
+        persona2.start();
         try {
-            Thread.sleep(2000);
+            Thread.sleep(500);
         } catch (InterruptedException ex) {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        synchronized (persona){
-            if (persona.pasosPersona()==33){
-                persona.notifyAll();
-            }
-            if (persona.pasosPersona()==66){
-                persona.notifyAll();
-            }
-        }   
-        
+       /* persona3.start();
+        persona4.start();
+        persona5.start();*/
     }
 }

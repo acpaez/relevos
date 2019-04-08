@@ -11,6 +11,10 @@
 public class Equipo {
     private int equipo;
 
+    public Equipo(int equipo) {
+        this.equipo = equipo;
+    }
+
     public void setEquipo(int equipo) {
         this.equipo = equipo;
     }
