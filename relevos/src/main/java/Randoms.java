@@ -12,7 +12,11 @@ import java.util.Random;
  * @author c-les
  */
 public class Randoms {
-   public int crearRamdom(){
+    /**
+     * el metodo genera un numero randomico de 0 a 3
+     * @return el numero randomico
+     */
+   public static int crearRamdom(){
        Random aleatorio = new Random(System.currentTimeMillis());
        int numero=aleatorio.nextInt(3);
        return numero;

@@ -12,7 +12,9 @@ import java.util.logging.Logger;
  * @author c-les
  */
 public class Principal {
-
+/**
+ * creamos los equipos con sus respectivos deportistas 
+ */
     Equipo equipo = new Equipo(1);
     Equipo equipo2 = new Equipo(2);
     Equipo equipo3 = new Equipo(3);
@@ -27,15 +29,14 @@ public class Principal {
     Persona persona7 = new Persona(equipo3, "Atleta 8", 33, 66);
     Persona persona8 = new Persona(equipo3, "Atleta 9", 66, 100);
 
+    /**
+     * inicializamos los hilos de los 9 deportistas 
+     */
     public void principal() {
         persona.start();
         persona1.start();
         persona2.start();
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        
         persona3.start();
         persona4.start();
         persona5.start();
