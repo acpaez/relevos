@@ -34,15 +34,15 @@ public class Principal {
      */
     public void principal() {
         persona.start();
-        persona1.start();
-        persona2.start();
+        //persona1.start();
+        //persona2.start();
         
-        persona3.start();
-        persona4.start();
-        persona5.start();
+        //persona3.start();
+        //persona4.start();
+        //persona5.start();
         
-        persona6.start();
-        persona7.start();
-        persona8.start();
+        //persona6.start();
+        //persona7.start();
+        //persona8.start();
     }
 }

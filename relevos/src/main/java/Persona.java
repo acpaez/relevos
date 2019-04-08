@@ -59,7 +59,6 @@ public class Persona extends Thread {
  */
     public void avanzar() {
         while (true) {
-            pasos = pasos();
             if (pasos >= 33) {
                 synchronized (equipo) {
                     equipo.notify();
@@ -67,7 +66,9 @@ public class Persona extends Thread {
                 }
                 break;
             }
-            if (pasos >= 0 && pasos <= 33) {
+            if (posicionInicial >= 0 && posicionFinal <= 33) {
+                pasos = pasos();
+            
                 StringBuffer s = new StringBuffer("\nEquipo " + equipo.getEquipo()+"|................................2................................3..................................\n");
                 System.out.print(s.insert(pasos+9, "1"));
             }
@@ -78,7 +79,6 @@ public class Persona extends Thread {
  */
     public void avanzar2() {
         while (true) {
-            pasos = pasos();
             if (pasos >= 66) {
                 synchronized (equipo) {
                     equipo.notify();
@@ -86,7 +86,8 @@ public class Persona extends Thread {
                 }
                 break;
             }
-            if (pasos > 33 && pasos <= 66) {
+            if (posicionInicial > 33 && posicionFinal <= 66) {
+                pasos = pasos();
                 StringBuffer s = new StringBuffer("\nEquipo " + equipo.getEquipo()+"|................................1................................3..................................\n");
                 System.out.print(s.insert(pasos+9, "2"));
             }
@@ -98,7 +99,7 @@ public class Persona extends Thread {
  */
     public void avanzar3() {
         while (true) {
-            pasos = pasos();
+            
             if (pasos >= 100) {
                 synchronized (equipo) {
                     System.out.println("\nEquipo " + equipo.getEquipo() + " Llegó a la meta primero");
@@ -106,7 +107,8 @@ public class Persona extends Thread {
                 }
                 break;
             }
-            if (pasos > 66) {
+            if (posicionInicial > 66 && posicionFinal<=100) {
+                pasos = pasos();
                 StringBuffer s = new StringBuffer("\nEquipo " + equipo.getEquipo()+"|................................1................................2..................................\n");
                 System.out.print(s.insert(pasos+9, "3"));
             }

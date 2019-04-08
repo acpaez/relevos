@@ -3,6 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+import junit.framework.Assert;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -14,7 +16,10 @@ import static org.junit.Assert.*;
  *
  * @author orlan
  */
-public class Pruebas {
+public class NewEmptyJUnitTest {
+    
+    public NewEmptyJUnitTest() {
+    }
     
     @BeforeClass
     public static void setUpClass() {
@@ -31,7 +36,6 @@ public class Pruebas {
     @After
     public void tearDown() {
     }
-    
     @Test
     public void randomTest(){
         int j = Randoms.crearRamdom();
@@ -48,4 +52,5 @@ public class Pruebas {
          assertEquals(3,j);
         }
     }
+ 
 }
